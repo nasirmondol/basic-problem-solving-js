@@ -38,13 +38,13 @@ const totalPaper = paperRequirements(3, 5, 7)
 
 // ৪. একটা ফাংশন লিখবে। এই ফাংশনের নাম হবে bestFriend তারপর সেই ফাংশনে ইনপুট প্যারামিটার হিসেবে একটা array নিবে। সেই array এর মধ্যে তোমার সব ফ্রেন্ডের নাম থাকবে। এখন তোমার কাজ হচ্ছে যে ফ্রেন্ড এর নাম সবচেয়ে বড় সেই ফ্রেন্ড এর নাম রিটার্ন করে দেয়া। এই ক্ষেত্রে তুমি নামটা অর্থাৎ ফ্রেন্ডের নাম (স্ট্রিং) রিটার্ন করতে হবে। 
 
-const friends = ['Shakil', 'Mubassir', 'Robel', 'Rohul', 'Al-Amin', 'Mofizul', 'Faruk faizul']
+const friends = ['Shakil', 'Mubassir Rahman', 'Robel', 'Rohul', 'Al-Amin', 'Mofizul', 'Faruk faizullllllll']
 const friendsArray = bestFriend(friends);
-console.log(friendsArray);
+// console.log(friendsArray);
 
 
 function bestFriend(friends) {
-    let largestFrnd = friends[0];
+    let largestFrnd = '';
     for (let i = 0; i < friends.length; i++) {
         let name = friends[i];
         if (friends[i].length > largestFrnd.length) {
@@ -55,20 +55,29 @@ function bestFriend(friends) {
     return largestFrnd;
 }
 
+// ৫. এইটা একটু ট্রিকি হতে পারে। একটা array এর মধ্যে অনেকগুলা সংখ্যা থাকবে। তোমার কাজ হচ্ছে সংখ্যা গুলা একটার পর একটা করে চেক করা। এবং সংখ্যা গুলা যদি পজিটিভ সংখ্যা হয়। অর্থাৎ শূন্য বা শূন্যের চাইতে বড় হয় তাহলে সেগুলাকে কোন একটা array এর মধ্যে রাখবে। আর যদি নেগেটিভ সংখ্যা হয়। তাহলে লুপটা স্টপ করে দিবে। এবং লুপ বন্ধ করার আগ পর্যন্ত যতগুলা পজিটিভ সংখ্যা পাওয়া গেছে। সেগুলা রিটার্ন করে দিবে। 
 
-// function longest_str_in_array(arra) {
-//     var max_str = arra[0].length;
-//     var ans = arra[0];
-//     for (var i = 1; i < arra.length; i++) {
-//         var maxi = arra[i].length;
-//         if (maxi > max_str) {
-//             ans = arra[i];
-//             max_str = maxi;
-//         }
-//     }
-//     return ans;
-// }
-// console.log(longest_str_in_array(["ab", "a", "abcd"]));
+const arrayNumber = [10, 40, -2, -18, -45, 89, -11, 120, -5];
+
+function findTheArray(numbers) {
+    let newArray = [];
+    for (let i = 0; i < numbers.length; i++) {
+        const element = numbers[i]
+        // console.log(element);
+        if (element >= 0) {
+            newArray.push(element)
+        }
+        else if (element <= 0) {
+            break;
+        }
+    }
+    return newArray;
+}
+
+const findArray = findTheArray(arrayNumber);
+console.log(findArray);
+
+
 
 
 
